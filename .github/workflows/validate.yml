@@ -1,0 +1,30 @@
+name: Validate skills
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - name: Check each skill has a SKILL.md with name and description
+        run: |
+          status=0
+          for dir in skills/*/; do
+            [ -d "$dir" ] || continue
+            base=$(basename "$dir")
+            case "$base" in _*) continue ;; esac
+            file="${dir}SKILL.md"
+            if [ ! -f "$file" ]; then
+              echo "::error::$dir has no SKILL.md"
+              status=1
+              continue
+            fi
+            head -n 1 "$file" | grep -qx -- '---' || { echo "::error file=$file::frontmatter must start on line 1"; status=1; }
+            grep -q '^name:' "$file" || { echo "::error file=$file::missing name"; status=1; }
+            grep -q '^description:' "$file" || { echo "::error file=$file::missing description"; status=1; }
+          done
+          exit $status
