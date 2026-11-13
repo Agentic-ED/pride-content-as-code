@@ -1,0 +1,7 @@
+# Owners of the Pride. Replace the placeholders, then remove the leading "#".
+# Human leads approve every pull request except minor changes the Lion merges under the
+# AgenticED merge policy. The Guild agent may be added as a reviewer.
+#
+# *            @<human-lead-github-handle>
+# /skills/     @<human-lead-github-handle>
+# /agents/     @<human-lead-github-handle>

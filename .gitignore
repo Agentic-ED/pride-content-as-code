@@ -1,0 +1,12 @@
+.DS_Store
+.env
+.env.*
+node_modules/
+__pycache__/
+
+# Test results stay with the organization that ran them.
+agents/*/tests/results/
+
+# Personal Claude Code settings
+.claude/settings.local.json
+CLAUDE.local.md
