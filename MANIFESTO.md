@@ -23,7 +23,8 @@ Docs-as-code writers, learning engineers, developer educators and generative UI 
 - **Humans at the helm** over unattended generation. The Lion reviews and proposes. A human
   Guild lead decides what merges.
 
-That is, while there is value in the items on the right, we value the items on the left more.
+Pages, courses and documents still have their place. We would rather keep one living source
+and let agents and applications meet each learner with what is true today.
 
 ## What we build
 
